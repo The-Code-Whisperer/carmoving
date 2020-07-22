@@ -1,0 +1,38 @@
+<html>
+fffff
+<canvas id="gameCanvas" width="1200" height="600"></canvas>
+<script>
+    var canvas; // info about display area info
+    var canvasContext; // about stuff on it
+    var ballX = 50;
+    var carX= 0;
+    var car = new Image();
+    car.src="car.png";
+
+    // runs only when the window is finished running
+    window.onload = function () {
+        console.log("hello worlddd")
+        canvas = document.getElementById('gameCanvas');
+        canvasContext = canvas.getContext('2d');
+        canvasContext.drawImage(car, 0, 0);
+        setInterval(drawEverything, 20);
+        
+    }
+
+    function drawEverything() {
+        carX += 6.5;
+        canvasContext.fillStyle = 'black';
+        canvasContext.fillRect(0,0,canvas.width, canvas.height);
+        canvasContext.drawImage(car, carX, 100);
+        // ballX += 20;
+        // console.log(ballX);
+        //canvasContext.fillStyle = 'black';
+        // canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+        // canvasContext.fillStyle = 'white';
+        // canvasContext.fillRect(225, 210, 200, 200);
+        // canvasContext.fillStyle = 'red';
+        // canvasContext.fillRect(ballX, 100, 10, 10);
+    }
+</script>
+
+</html>
